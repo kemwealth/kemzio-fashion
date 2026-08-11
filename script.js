@@ -1,11 +1,20 @@
 const filters = document.querySelectorAll('.filter');
-const tiles = document.querySelectorAll('.tile');
+const productGrid = document.querySelector('#product-grid');
 const modal = document.querySelector('.modal');
 const modalImage = modal.querySelector('img');
 const modalTitle = modal.querySelector('.modal-caption');
 const closeButton = modal.querySelector('.close');
 const productCount = document.querySelector('#product-count');
 let lastFocusedElement;
+
+productGrid.innerHTML = products.map((product, index) => `
+    <figure class="tile${product.wide ? ' wide' : ''}" data-kind="${product.category}" data-title="${product.title}" role="button" tabindex="0" aria-label="Preview ${product.title}">
+        <img src="${product.image}" alt="${product.alt}" loading="lazy">
+        <figcaption><span class="tile-title">${product.title}</span><span class="tile-type">${product.type} / ${String(index + 1).padStart(2, '0')}</span></figcaption>
+    </figure>
+`).join('');
+
+const tiles = productGrid.querySelectorAll('.tile');
 
 const updateProductCount = (filterName) => {
     const visibleCount = [...tiles].filter((tile) => filterName === 'all' || tile.dataset.kind === filterName).length;
