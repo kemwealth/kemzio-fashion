@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">KemZio morning coffee mug</title>
+  <desc id="desc">A warm coral ceramic mug with the KemZio wordmark, coffee, and rising steam.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe4bc"/>
+      <stop offset="0.55" stop-color="#f7b27d"/>
+      <stop offset="1" stop-color="#e98264"/>
+    </linearGradient>
+    <linearGradient id="cup" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff8564"/>
+      <stop offset="1" stop-color="#c94845"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="18"/>
+      <feOffset dy="20"/>
+      <feComponentTransfer><feFuncA type="linear" slope=".25"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="900" fill="url(#bg)"/>
+  <circle cx="730" cy="145" r="92" fill="#fff1b2" opacity=".75"/>
+  <path d="M0 690 Q190 610 350 690 T720 680 T900 650 V900 H0Z" fill="#f6ca88" opacity=".65"/>
+  <path d="M95 760 Q240 700 390 755 T700 750 T900 710" fill="none" stroke="#f8e4ba" stroke-width="5" opacity=".7"/>
+  <g fill="none" stroke="#fff5dc" stroke-linecap="round" stroke-width="13" opacity=".8">
+    <path d="M365 265 C300 210 420 175 345 105"/>
+    <path d="M500 265 C435 210 555 175 480 105"/>
+  </g>
+  <g filter="url(#shadow)">
+    <path d="M235 375 C235 340 265 315 300 315 H620 C655 315 685 340 685 375 V600 C685 685 620 735 460 735 C300 735 235 685 235 600Z" fill="url(#cup)"/>
+    <path d="M685 405 H726 C790 405 820 455 820 515 C820 580 785 630 715 630 H670 V585 H712 C744 585 764 557 764 515 C764 477 745 450 710 450 H685Z" fill="#d7584b"/>
+    <ellipse cx="460" cy="375" rx="225" ry="55" fill="#ff9970"/>
+    <ellipse cx="460" cy="375" rx="185" ry="35" fill="#63382d"/>
+    <path d="M320 520 H600" stroke="#ffe8b5" stroke-width="4" opacity=".7"/>
+    <text x="460" y="555" text-anchor="middle" fill="#fff2cb" font-family="Arial, sans-serif" font-size="58" font-weight="800" letter-spacing="8">KEMZIO</text>
+    <text x="460" y="595" text-anchor="middle" fill="#fff2cb" font-family="Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="5">MAKE YOUR MARK</text>
+  </g>
+  <text x="65" y="105" fill="#6c3c32" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="5">MORNING EDITION / 03</text>
+  <text x="65" y="835" fill="#6c3c32" font-family="Arial, sans-serif" font-size="20" letter-spacing="3">COFFEE. IDEAS. KEMZIO.</text>
+</svg>

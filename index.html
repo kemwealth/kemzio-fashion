@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KemZio Print House creates custom branded clothing, hoodies, and mugs.">
+    <title>KemZio Print House | Custom branding</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <a class="brand" href="#top"><img src="kem.jpg" alt="KemZio Print House logo">KEMZIO<span class="mono">FASHION</span></a>
+            <nav aria-label="Main navigation">
+                <a href="#collection">Products</a>
+                <a href="#process">Process</a>
+                <a href="https://www.instagram.com/kemzio?igsh=MWZmMwdTd5bTI5bA==">Instagram</a>
+                <a href="mailto:kemzio@gmail.com">Contact</a>
+            </nav>
+        </header>
+
+        <main id="top">
+            <section class="hero">
+                <div>
+                    <p class="eyebrow">KemZio Fashion</p>
+                    <h1>Make<br><em>your mark</em><br>wearable.</h1>
+                    <p class="intro">Custom clothing, hoodies, and mugs made for brands, teams, events, and people with something to say.</p>
+                    <a class="hero-cta" href="mailto:kemzio@gmail.com?subject=KemZio%20custom%20print%20enquiry">Start a custom order <span aria-hidden="true">&#8594;</span></a>
+                </div>
+                <div class="hero-art">
+                    <img src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1400&q=85" alt="Folded colorful clothing ready for custom printing">
+                    <span class="hero-label">Custom / 01</span>
+                </div>
+            </section>
+
+            <section id="collection" aria-labelledby="collection-title">
+                <div class="section-head">
+                    <h2 id="collection-title">What we print <span class="mono" id="product-count">(05)</span></h2>
+                    <div class="filters" aria-label="Filter products">
+                        <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+                        <button class="filter" data-filter="clothing" aria-pressed="false">Clothing</button>
+                        <button class="filter" data-filter="hoodie" aria-pressed="false">Hoodies</button>
+                        <button class="filter" data-filter="mug" aria-pressed="false">Mugs</button>
+                    </div>
+                </div>
+
+                
+                <div class="gallery">
+                    <figure class="tile wide" data-kind="clothing" data-title="Branded tees" role="button" tabindex="0" aria-label="Preview Branded tees">
+                        <img src="kem.jpg" alt="Plain white t-shirts prepared for branding" loading="lazy">
+                        <figcaption><span class="tile-title">Branded tees</span><span class="tile-type">Clothing / 01</span></figcaption>
+                    </figure>
+                    <figure class="tile" data-kind="hoodie" data-title="Everyday hoodies" role="button" tabindex="0" aria-label="Preview Everyday hoodies">
+                        <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85" alt="Black hoodie for custom printing" loading="lazy">
+                        <figcaption><span class="tile-title">Everyday hoodies</span><span class="tile-type">Hoodies / 02</span></figcaption>
+                    </figure>
+                    <figure class="tile" data-kind="mug" data-title="Coffee break mugs" role="button" tabindex="0" aria-label="Preview Coffee break mugs">
+                        <img src="kemzio-mug.svg" alt="KemZio branded coffee mug in a warm morning setting" loading="lazy">
+                        <figcaption><span class="tile-title">Coffee break mugs</span><span class="tile-type">Mugs / 03</span></figcaption>
+                    </figure>
+                    <figure class="tile" data-kind="clothing" data-title="Team uniforms" role="button" tabindex="0" aria-label="Preview Team uniforms">
+                        <img src="motivational-shirt.svg" alt="KemZio shirt printed with the words Just Do It" loading="lazy">
+                        <figcaption><span class="tile-title">Team uniforms</span><span class="tile-type">Clothing / 04</span></figcaption>
+                    </figure>
+                    <figure class="tile wide" data-kind="hoodie" data-title="Statement hoodies" role="button" tabindex="0" aria-label="Preview Statement hoodies">
+                        <img src="wear-beauty-hoodie.svg" alt="Blank neutral hoodie printed with the words Wear Beauty" loading="lazy">
+                        <figcaption><span class="tile-title">Statement hoodies</span><span class="tile-type">Hoodies / 05</span></figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section class="process" id="process" aria-labelledby="process-title">
+                <p class="eyebrow">From idea to item</p>
+                <h2 id="process-title">Bring the design.<br><em>We make it real.</em></h2>
+                <div class="process-grid">
+                    <div><span class="mono">01</span><h3>Send your artwork</h3><p>Share your logo, artwork, or a rough idea with our team.</p></div>
+                    <div><span class="mono">02</span><h3>Choose your pieces</h3><p>Pick the garments, hoodies, and mugs that fit your brand.</p></div>
+                    <div><span class="mono">03</span><h3>Wear it proudly</h3><p>We print, finish, and prepare your order to make an impression.</p></div>
+                </div>
+            </section>
+        </main>
+        <footer><div class="wrap"><span class="mono">KemZio Print House © 2026</span><span class="mono">Made to make an impression</span></div></footer>
+    </div>
+
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true" hidden>
+        <button class="close" aria-label="Close preview">×</button>
+        <img src="" alt="">
+        <p class="modal-caption" id="modal-title"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
