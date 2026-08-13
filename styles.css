@@ -40,12 +40,32 @@ h1 { font-size: clamp(54px, 8vw, 108px); letter-spacing: -.09em; line-height: .8
 .gallery { display: grid; gap: 18px; grid-template-columns: repeat(12, 1fr); padding-bottom: 92px; }
 .tile { cursor: pointer; grid-column: span 4; margin: 0; position: relative; }
 .tile.wide { grid-column: span 8; }
-.tile img { aspect-ratio: 4 / 3; display: block; height: auto; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1); width: 100%; }
+.tile img { aspect-ratio: 4 / 3; display: block; height: auto; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1); width: 100%; border-radius: 8px; }
 .tile.wide img { aspect-ratio: 1.85 / 1; }
+
+/* Aspect helpers for product types */
+.product-img.aspect-square { aspect-ratio: 1 / 1; }
+.product-img.aspect-portrait { aspect-ratio: 3 / 4; }
+.product-img.aspect-landscape { aspect-ratio: 4 / 3; }
+.product-img.aspect-wide { aspect-ratio: 1.85 / 1; }
+/*
+    Aspect helper classes allow products to request a preferred
+    aspect ratio without hardcoding image filenames. Use in
+    conjunction with `product.aspect` emitted by the renderer.
+*/
 .tile:hover img { transform: scale(1.025); }
-.tile figcaption { align-items: center; display: flex; justify-content: space-between; padding-top: 10px; }
+.tile figcaption { align-items: center; display: flex; justify-content: space-between; padding: 10px 12px; margin-top: 8px; background: rgba(255,255,255,0.85); border-radius: 8px; }
 .tile-title { font-size: 13px; font-weight: 700; }
 .tile-type { color: var(--muted); font-family: "DM Mono", monospace; font-size: 10px; text-transform: uppercase; }
+
+/* Make mug and statement hoodie share the same sizing and aspect */
+.tile[data-match="featured"] { grid-column: span 8; }
+.tile[data-match="featured"] img { aspect-ratio: 1.85 / 1; }
+/*
+    `data-match="featured"` is applied to select product tiles that
+    should share the same visual sizing (e.g. mug + statement hoodie).
+    This keeps those items visually consistent in the gallery.
+*/
 .play { align-items: center; background: var(--lime); border-radius: 50%; display: flex; height: 42px; justify-content: center; left: 18px; position: absolute; top: 18px; width: 42px; }
 .process { border-top: 1px solid var(--line); padding: 25px 0 90px; }
 .process h2 { font-size: clamp(34px, 5vw, 62px); letter-spacing: -.07em; line-height: .95; margin: 24px 0 48px; }

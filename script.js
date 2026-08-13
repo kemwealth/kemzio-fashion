@@ -1,3 +1,6 @@
+// Core DOM references and behavior for the product gallery and modal
+// This script renders `products` into `#product-grid` and wires
+// keyboard/aria interactions for accessibility.
 const filters = document.querySelectorAll('.filter');
 const productGrid = document.querySelector('#product-grid');
 const modal = document.querySelector('.modal');
@@ -7,12 +10,27 @@ const closeButton = modal.querySelector('.close');
 const productCount = document.querySelector('#product-count');
 let lastFocusedElement;
 
-productGrid.innerHTML = products.map((product, index) => `
-    <figure class="tile${product.wide ? ' wide' : ''}" data-kind="${product.category}" data-title="${product.title}" role="button" tabindex="0" aria-label="Preview ${product.title}">
-        <img src="${product.image}" alt="${product.alt}" loading="lazy">
+// Render each product. If `product.sources` exists it will render a
+// <picture> element (allowing WebP/srcset/sizes). Otherwise falls back
+// to a single <img>. Each <figure> also emits `data-match` when present
+// so CSS can apply shared visual rules (used for the mug + hoodie pairing).
+productGrid.innerHTML = products.map((product, index) => {
+    const picture = product.sources && product.sources.length
+        ? `
+            <picture>
+                ${product.sources.map(s => `<source ${s.type ? `type="${s.type}"` : ''} srcset="${s.srcset}" ${s.sizes ? `sizes="${s.sizes}"` : ''}></source>`).join('')}
+                <img class="product-img ${product.aspect ? `aspect-${product.aspect}` : ''}" src="${product.image}" alt="${product.alt}" loading="lazy" decoding="async">
+            </picture>
+        `
+        : `<img class="product-img ${product.aspect ? `aspect-${product.aspect}` : ''}" src="${product.image}" alt="${product.alt}" loading="lazy" decoding="async">`;
+
+    return `
+    <figure class="tile${product.wide ? ' wide' : ''}"${product.match ? ` data-match="${product.match}"` : ''} data-kind="${product.category}" data-title="${product.title}" role="button" tabindex="0" aria-label="Preview ${product.title}">
+        ${picture}
         <figcaption><span class="tile-title">${product.title}</span><span class="tile-type">${product.type} / ${String(index + 1).padStart(2, '0')}</span></figcaption>
     </figure>
-`).join('');
+    `;
+}).join('');
 
 const tiles = productGrid.querySelectorAll('.tile');
 

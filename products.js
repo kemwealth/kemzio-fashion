@@ -1,39 +1,55 @@
+// Product catalog
+// Each product may include:
+// - category: group for filtering
+// - title, type, image, alt: display/data attributes
+// - wide: boolean to span a larger grid column
+// - aspect: suggested aspect helper (square, portrait, landscape, wide)
+// - match: optional flag used to apply shared CSS (e.g. 'featured')
 const products = [
     {
         category: 'clothing',
-        title: 'Branded tees',
+        title: 'Branded Tees',
         type: 'Clothing',
         image: 'kem.jpg',
-        alt: 'Plain white t-shirts prepared for branding',
-        wide: true
+        alt: 'White t-shirt mockup with KemZio logo',
+        wide: true,
+        aspect: 'wide'
     },
     {
         category: 'hoodie',
-        title: 'Everyday hoodies',
+        title: 'Everyday Hoodies',
         type: 'Hoodies',
-        image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=900&q=85',
-        alt: 'Black hoodie for custom printing'
+        image: 'everyday.png',
+        alt: 'Black hoodie mockup for custom printing',
+        aspect: 'portrait'
     },
     {
         category: 'mug',
-        title: 'Coffee break mugs',
+        title: 'Coffee Break Mug',
         type: 'Mugs',
-        image: 'kemzio-mug.svg',
-        alt: 'KemZio branded coffee mug in a warm morning setting'
+        image: 'mug.png',
+        alt: 'KemZio ceramic mug mockup',
+        aspect: 'square',
+        // mark this product to share sizing with the statement hoodie
+        match: 'featured'
     },
     {
         category: 'clothing',
-        title: 'Team uniforms',
+        title: 'Team Uniforms',
         type: 'Clothing',
-        image: 'motivational-shirt.svg',
-        alt: 'KemZio shirt printed with the words Just Do It'
+        image: 'Team uniforms.png',
+        alt: 'KemZio team shirt mockup',
+        aspect: 'landscape'
     },
     {
         category: 'hoodie',
-        title: 'Statement hoodies',
+        title: 'Statement Hoodies',
         type: 'Hoodies',
-        image: 'wear-beauty-hoodie.svg',
-        alt: 'Blank neutral hoodie printed with the words Wear Beauty',
-        wide: true
+        image: 'hoodies.png',
+        alt: 'Neutral hoodie mockup printed with "Wear Beauty"',
+        wide: true,
+        aspect: 'wide',
+        // share the same visual sizing as the mug above
+        match: 'featured'
     }
 ];
