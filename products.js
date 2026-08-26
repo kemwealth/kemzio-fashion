@@ -10,7 +10,7 @@ const products = [
         category: 'clothing',
         title: 'Branded Tees',
         type: 'Clothing',
-        image: 'kem.jpg',
+        image: 'hanger.avif',
         alt: 'White t-shirt mockup with KemZio logo',
         wide: true,
         aspect: 'wide'
